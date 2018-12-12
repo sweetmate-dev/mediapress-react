@@ -1,0 +1,15 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-config-standard"
+  ],
+  "jsRules": {},
+  "rules": {
+    "ter-indent": [true, 2, {
+      "SwitchCase": 1
+    }],
+    "no-use-before-decalre": false
+  },
+  "rulesDirectory": [],
+  "ban": [true, ["expect"]]
+}

@@ -1,0 +1,97 @@
+version: 2
+jobs:
+
+  prebuild:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Install Node Modules
+          command: yarn install --check-files
+      - save_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build
+          command: yarn run build
+      - save_cache:
+          key: dist-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - dist
+            - static
+
+  test:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+#      - run:
+#          name: Test Suite
+#          command: yarn run test --ci
+
+  coverage:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+#      - run:
+#          name: Pre-Test
+#          command: yarn test --ci
+# Temporarily disable coverage until we can figure out why it's breaking on CI
+#      - run:
+#          name: Publish Coverage Report
+#          command: yarn run cover:publish
+      
+  deploy:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache:
+          key: dist-{{ .Branch }}-{{ .Revision }}
+      - run:
+          name: Build Docker Image
+          command: docker build --rm=false -t mediapress/frontend:$CIRCLE_BRANCH .
+      - run:
+          name: Docker Login
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Docker Publish
+          command: docker push mediapress/frontend:$CIRCLE_BRANCH
+      - run:
+          name: Autodeploy
+          command: .circleci/deploy.sh
+
+workflows:
+  version: 2
+  BuildTestDeploy:
+    jobs:
+      - prebuild
+      - build:
+          requires:
+            - prebuild
+      - test:
+          requires:
+            - prebuild
+      - coverage:
+          requires:
+            - prebuild
+      - deploy:
+          requires:
+            - build
+            - test
