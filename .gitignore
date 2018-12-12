@@ -1,0 +1,9 @@
+node_modules
+dist/
+.nyc_output
+coverage/
+yarn-error.log
+docs/
+flow-coverage/
+movie.mp4
+.vscode/
