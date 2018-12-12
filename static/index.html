@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>MediaPress</title>
+    <script type="text/javascript" src="/app.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="./magic.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="defer-canvas"></div>
+    <script src="https://cdn.ravenjs.com/3.22.1/raven.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     Raven.config('https://07f5652feb3e4031b538545d4c7d838a@sentry.io/281975').install()
+     // Handle switching between prod and staging
+     if (window.location.hostname === 'app.mediapress.io' && window.location.port === '8080')
+       { window.location.replace('http://app.mediapress.io') }
+     if (window.location.hostname === 'staging.mediapress.io' && window.location.port === '')
+       { window.location.replace('http://staging.mediapress.io:8080') }
+    </script>
+  </body>
+</html>
