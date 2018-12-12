@@ -1,0 +1,81 @@
+.dropdown
+  position: relative
+  margin-right: 10px
+  .dropdown-header
+    +input-style
+    display: inline-block
+    cursor: pointer
+    width: 100%
+    box-sizing: border-box
+    line-height: 12px
+    vertical-align: middle
+    padding-right: 26px
+    height: 36px
+    &:after
+      display: inline-block;
+      content: '';
+      position: absolute;
+      right: 6px;
+      margin-top: 5px;
+      -webkit-mask-image: url('/static/icons/' + $icon-topbar-dropdown);
+      mask-image: url('/static/icons/' + $icon-topbar-dropdown);
+      width: 10px;
+      height: 10px;
+      -webkit-mask-size: 10px 10px;
+      mask-size: 10px 10px;
+      background: color(color-menu-icon);
+    &:before
+      display: inline-block;
+      content: '';
+      position: absolute;
+      right: 6px;
+      margin-top: -3px;
+      -webkit-mask-image: url('/static/icons/' + $icon-topbar-dropdown);
+      mask-image: url('/static/icons/' + $icon-topbar-dropdown);
+      width: 10px;
+      height: 10px;
+      -webkit-mask-size: 10px 10px;
+      mask-size: 10px 10px;
+      background: color(color-menu-icon);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    
+    span
+      height: 12px
+      margin-right: 39px
+      color: #3950a2;
+      font-size: 12px;
+  &:hover 
+    .dropdown-header:after, &.open .dropdown-header:after
+      display: none;
+    .dropdown-header:before, &.open .dropdown-header:before
+      margin-top: 0px;
+
+  .dropdown-inner
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: auto
+    margin-top: -1px
+    padding: 8px
+  &.open .dropdown-inner, &:hover .dropdown-inner
+    z-index: 9999999
+    background: #FFF
+    display: block
+    top: 100%
+    border: 1px solid #dae1f4
+
+  .dropdown-list
+    list-style: none
+    margin: 0
+    padding: 0
+    li
+      font-size: 18px
+      cursor: pointer
+      border-bottom: 1px solid color(border-color)
+    li:hover
+      background: color(primary-hover)

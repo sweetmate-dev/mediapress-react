@@ -1,0 +1,50 @@
+div.menuedit-options
+  a.downtick
+    +icon-before($icon-arrow-down)
+    +icon-btn()
+  a.uptick
+    +icon-before($icon-arrow-down)
+    transform: rotate(180deg)
+    line-height: 1px
+    +icon-btn()
+  a.copy
+    +icon-before($icon-copy)
+  a.hamburger
+    +icon-before($icon-menu)
+    margin: 1px
+    cursor: pointer
+    line-height: 100%
+    +icon-btn()
+    &:hover
+      + .popout-container
+        display: initial
+        .popout
+          display: flex
+  .popout-container
+    left: 170px
+    width: 120px
+    height: 28px
+    top: -2px
+    position: absolute
+    z-index: 14
+    display: none
+    &.hidden
+    &:hover
+      display: initial
+      .popout
+        display: flex
+  .popout
+    width: auto
+    margin-left: 20px
+    height: 28px
+    left: 105%
+    width: 100px
+    top: -2px
+    background: color(background)
+    border: $border-style
+    display: none
+    flex-direction: horizontal
+    justify-content: space-around
+    align-items: center
+    &:hover
+      display: flex

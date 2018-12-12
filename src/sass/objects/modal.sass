@@ -1,0 +1,60 @@
+/**
+ * Modal Object
+ *
+ * Usable with simply .modal and .modal-inner
+ * ```
+ * <div class="modal">
+ *   <div class="modal-window">
+ *      ...
+ *   </div>
+ * </div>
+ * ```
+ **/
+
+// The background of the modal, all hidden without .active
+.modal
+  display: none
+  background: rgba(0,0,0,0.2)
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 2
+
+  // Show the modal on active
+  &.active
+    display: block
+
+  // The inner floating Modal
+  .modal-inner
+    width: 400px
+    margin-left: auto
+    margin-right: auto
+    background: white
+    margin-top: 200px
+    box-shadow: 0 0 20px 0 #e6e6e6;
+
+
+  // Heading Styling
+  h2,h3
+    text-align: center
+    font-size: 26px
+    color: color(black-2)
+    line-height: 50px
+    position: relative
+
+  h3 a.close
+    color: transparent
+    cursor: pointer
+    +icon-before($icon-x)
+    width: 20px
+    height: 20px
+    overflow: hidden
+    position: absolute
+    top: 6px
+    right: 6px
+    &:before
+      background: red
+
+  // Body Styling

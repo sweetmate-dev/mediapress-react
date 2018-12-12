@@ -1,0 +1,40 @@
+form.form, form.padded
+  padding: 0 $menu-padding 0 $menu-padding
+  overflow-x: hidden
+
+div.input
+  padding: 0 0 $menu-padding 0
+
+  label
+    font-size: 10px
+    color: color(input-label)
+    display: block
+    margin-bottom: 4px
+
+  // Range
+  &.range input[type=range]
+    width: 100%
+  &.range input[type=text]
+    float: right
+    width: 40px
+    border: none
+    color: #3950a2
+    text-align: center
+
+  // Text and Select
+  &.text, &.select
+    input, select
+      +input-style
+      box-sizing: border-box
+      width: 100%
+      max-width: 600px
+      color: #3950a2
+      font-weight: 400
+
+  // File Upload Standard
+  &.file input[type=file], &.file img
+    max-width: 100%
+
+// Margin between inputs
+div.input + div.input
+  margin-top: 10px

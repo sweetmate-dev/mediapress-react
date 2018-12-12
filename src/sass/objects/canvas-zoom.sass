@@ -1,0 +1,44 @@
+/****
+ * Canvas Zoom Layout:
+ *
+ * div.canvas-zoom
+ *   a.canvas-zoom-label
+ *   a.canvas-zoom-in
+ *   span.canvas-zoom-value
+ *   a.canvas-zoom-out
+ */
+
+.canvas-zoom
+  padding: 0 10px
+  position: absolute
+  min-width: 135px
+  height: 36px
+  border-radius: 30px
+  right: 30px
+  bottom: 135px
+  background: linear-gradient(77deg, #e55a90, #e5a46f)
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.14)
+  color: #fff
+  line-height: 36px
+  text-align: center
+
+  a
+    color: #fff
+
+  a.canvas-zoom-label
+    font-size: 13px
+    font-weight: 300
+    margin-right: 13px
+    cursor: pointer
+
+  .canvas-zoom-amount
+    font-size: 13px
+    font-weight: 300
+    margin: 0 8px
+
+  .canvas-zoom-in, .canvas-zoom-out
+    font-size: 16px
+    vertical-align: -1px
+    font-weight: bold
+    cursor: pointer
+

@@ -1,0 +1,74 @@
+.sidebar.mini
+  .light-switch-wrap
+    .light-switch
+      + label span
+        display: none
+      label
+        cursor: pointer
+      opacity: 0
+      position: relative
+      &:checked
+        &+ label
+          background-image: url("../../static/icons/crescent.svg")
+          width: 14px
+          height: 14px
+          left: 23px
+          position: absolute
+      &:not(:checked)
+        &+ label
+          background-image: url("../../static/icons/sun.svg")
+          width: 15px
+          height: 15px
+          left: 22px
+          position: absolute
+    .flag-span
+      display: none
+.sidebar:not(.mini)
+  .light-switch-wrap
+    font-size: 10px
+    position: relative
+    right: 61px
+    .light-switch
+      + label
+        cursor: pointer
+        span
+          position: absolute
+          top: 7px
+          color: color(lightness-setting)
+          right: 0px
+          width: 100px
+      + label:before
+        display: block
+        content: ""
+        width: 17px
+        border-radius: 100px
+        height: 6px
+        background-color: color(lightness-switch-track)
+        opacity: 1
+        bottom: 8px
+        position: absolute
+      + label:after
+        display: block
+        content: ""
+        height: 10px
+        width: 10px
+        position: absolute
+        bottom: 6px
+        right: 30px
+        border-radius: 100px
+        background-color: color(lightness-switch-knob)
+        transition: 0.1s linear all
+      opacity: 0
+      &:checked + label:after
+        right: 11px
+      &:not(:checked) + label:after
+        right: -3px
+    .flag-span
+      position: absolute
+      left: 20px
+      top: 7px
+      color: color(lightness-setting)
+
+  a.toggle-collapse
+    left: 134px;
+

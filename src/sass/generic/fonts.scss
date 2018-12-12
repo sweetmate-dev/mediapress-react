@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600,700");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+@import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans");
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro");
+
+.font-Roboto{font-family:'Roboto';}
+.font-Roboto-Mono{font-family:'Roboto Mono';}
+.font-Roboto-Condensed{font-family:'Roboto Condensed';}
+.font-Roboto-Slab{font-family:'Roboto Slab';}
+.font-Montserrat{font-family:'Montserrat';}
+.font-Open-Sans{font-family:'Open Sans';}
+.font-Arvo{font-family:'Arvo';}
+.font-Abril-Fatface{font-family:'Abril Fatface';}
+.font-Alfa-Slab-One{font-family:'Alfa Slab One';}
+.font-Josefin-Sans{font-family:'Josefin Sans';}
+.font-Josefin-Slab{font-family:'Josefin Slab';}
+.font-Lato{font-family:'Lato';}
+.font-Lobster{font-family:'Lobster';}
+.font-Merriweather{font-family:'Merriweather';}
+.font-Merriweather-Sans{font-family:'Merriweather Sans';}
+.font-Nunito{font-family:'Nunito';}
+.font-Pacifico{font-family:'Pacifico';}
+.font-Quicksand{font-family:'Quicksand';}
+.font-Raleway{font-family:'Raleway';}
+.font-Source-Sans-Pro{font-family:'Source Sans Pro';}
+.font-Source-Serif-Pro{font-family:'Source Serif Pro';}
+
+$font-default: 'Open Sans';
+$font-heading: 'Roboto';
+
+h1,h2,h3,h4,h5,h6,label{ font-family: $font-heading; }
+body { font-family: $font-default; }

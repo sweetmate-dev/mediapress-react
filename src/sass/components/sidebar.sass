@@ -1,0 +1,187 @@
+$collapse-padding: ($sidebar-collapsed-width - $sidebar-icon-collapsed) / 2
+
+section.sidebar
+  +shadow-style
+  background: color(lightness-bg)
+  height: 100%
+  max-width: $sidebar-width
+  z-index: 20
+  position: relative
+  flex-basis: $sidebar-width
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  min-height: 700px
+
+  // Logo Area
+  .logo
+    background-image: linear-gradient(73deg, color(lightness-ribbon-start), color(lightness-ribbon-end));
+    display: block
+    background-size: 100% 100%
+    text-indent: -99999px
+    padding: 16px 15px 15px 15px
+    &:before
+      content: ''
+      display: block
+      background: url('../img/logo-white.png')
+      background-size: 100% 100%
+      width: 500px * 0.25
+      height: 115px * 0.25
+      margin: 0 auto
+  &.mini .logo
+    background: url('../img/logo-mini.png')
+    background-size: 30px 30px
+    width: 30px
+    height: 30px
+    background-repeat: no-repeat
+    background-position: center
+    &:before
+      opacity: 0
+
+  .menu-text
+    font-size: 12px;
+    font-weight: 300;
+    color: #9b9b9b;
+    padding-left: 27px;
+    padding-top: 35px;
+    padding-bottom: 15px;
+
+  ul
+    width: $sidebar-width
+
+  // Collapsed Styling
+  &.mini
+    max-width: $sidebar-collapsed-width
+    overflow: hidden
+    ul
+      width: $sidebar-collapsed-width
+    ul li a
+      outline: 0
+      text-align: center
+      font-size: $sidebar-icon-collapsed
+      display: block
+      width: $sidebar-icon-collapsed
+      height: $sidebar-icon-collapsed
+      padding: $collapse-padding
+      line-height: 12px
+    ul li a:before
+      margin-bottom: 30px
+    .bottom
+      a.close
+        +sidebar-compact-btn-collapsed($icon-x)
+      a.logout
+        +sidebar-compact-btn-collapsed($icon-log-out)
+      a.save
+        +sidebar-compact-btn-collapsed($icon-save)
+
+  // Standard Size Styles
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    li
+      position: relative
+    a
+      color: color(lightness-text)
+      font-size: 12px
+      font-weight: 300
+      padding: 21px 20px
+      padding-left: 40px
+      display: block
+      text-decoration: none
+      white-space: nowrap
+
+    // Custom Element Styles
+    li.preview
+      +sidebar-item(color(sidebar-color-1), $icon-video)
+    li.elements
+      +sidebar-item(color(sidebar-color-2), $icon-edit)
+    li.add-scene
+      +sidebar-item(color(sidebar-color-3), $icon-plus)
+    li.audio
+      +sidebar-item(color(sidebar-color-4), $icon-volume-2)
+    li.settings
+      +sidebar-item(color(sidebar-color-5), $icon-settings)
+    li.export
+      +sidebar-item(color(sidebar-color-6), $icon-upload-cloud)
+
+    // Dashboard
+    li.create
+      +sidebar-item(color(sidebar-color-1), $icon-edit)
+    li.team
+      +sidebar-item(color(sidebar-color), $icon-users)
+    li.videos
+      +sidebar-item(color(sidebar-color-10), $icon-film)
+    li.media
+      +sidebar-item(color(sidebar-color-8), $icon-folder)
+    li.style-guide
+      +sidebar-item(color(sidebar-color), $icon-layers)
+    li.all-projects
+      +sidebar-item(color(sidebar-color-7), $icon-grid)
+    li.account
+      +sidebar-item(color(sidebar-color-2), $icon-user)
+    li.help
+      +sidebar-item(color(sidebar-color-3), $icon-help-circle)
+    li.trash
+      +sidebar-item(color(sidebar-color-11), $icon-trash)
+    li.clients
+      +sidebar-item(color(sidebar-color-5), $icon-layout)
+    li.analytics
+      +sidebar-item(color(sidebar-color-9), $icon-bar-chart-2)
+    li.settings.dashboard
+      +sidebar-item(color(sidebar-color-12), $icon-settings)
+
+  // Sidebar Footer
+  &:not(.no-timeline) .bottom:last-of-type
+    margin-bottom: 100px
+  &.no-timeline .bottom 
+    bottom: 0
+  .bottom:first-of-type
+    margin-top: auto
+  .bottom.save
+    margin-top: auto
+  .bottom
+    box-sizing: border-box
+    justify-content: space-between
+    width: 100%
+    display: flex
+    bottom: 100
+    padding: 20px 15px 15px 30px
+    span.title
+      color: color(secondary)
+      font-weight: 300
+      font-size: 12px
+      line-height: 24px
+      margin-right: auto
+
+    a.close
+      background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(67deg, #e55a90, #ff4756)
+      +sidebar-compact-btn()
+      color: #f44336
+    a.logout
+      +sidebar-compact-btn()
+    a.save
+      background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(67deg, #4353ff, #5843ff)
+      color: #4353ff
+      +sidebar-compact-btn()
+      &.unsaved
+        color: red
+    a.toggle-collapse
+      background: url('../img/collapse.svg')
+      background-size: 100% 100%
+      width: 24px
+      height: 24px
+      text-indent: -999999px
+      display: block
+      color: red
+      position: relative;
+
+  &.mini .bottom
+    flex-direction: column
+    align-items: center
+    padding: 15px
+    span.title
+      display: none
+    a
+      margin-right: 0
+      margin-bottom: 15px

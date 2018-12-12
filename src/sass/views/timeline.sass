@@ -1,0 +1,176 @@
+section.timeline
+  position: fixed
+  bottom: 0
+  width: 100%
+  height: $timeline-height
+  background: color(lightness-bg)
+  display: flex
+  z-index: 100
+  box-shadow: 0 0 2px #aeaeae
+
+  .controls
+    font-family: $font-heading
+    background: color(lightness-bg)
+    height: 100%
+    min-width: $timeline-width
+    @include day-only
+      border-top: $border-style-dark
+    @include night-only
+      border-top: 2px solid color(lightness-bg)
+    text-align: center
+    z-index: 50
+    padding-top: 15px
+    
+    & > button,
+      transition: none
+      padding: 0
+      border-radius: 40px
+      background: none
+      color: color(primary)
+      outline: none
+      text-align: center
+      cursor: pointer
+      span
+        display: none
+      &:hover
+        background: color(primary)
+        color: white
+    .back,.forward
+      width: 26px
+      height: 26px
+      margin-bottom: 2px
+      vertical-align: 0
+    .play, .pause
+      background-image: linear-gradient(45deg, color(red-gradient-from), color(red-gradient-to))
+      margin: 0 6px
+      width: 38px
+      height: 38px
+      font-size: 20px
+      font-weight: bold
+      &.hidden
+        display: none
+
+    // Control Icons
+    .play:before
+      +icon($icon-play, white, 24px, 24px)
+      margin-left: 2px
+    .pause:before
+      +icon($icon-pause, white, 24px, 24px)
+    .back:before
+      margin-left: -1px
+      +icon($icon-skip-back)
+    .forward:before
+      margin-left: -1px
+      +icon($icon-skip-forward)
+    .info
+      display: block
+      font-size: 15px
+      font-weight: bold
+      color: #111258
+      margin-top: 8px
+    .info.small
+      font-size: 12px
+      font-weight: normal
+      opacity: 0.3
+
+  // Timeline position indicator
+  .indicator
+    user-select: none
+    width: 1px
+    background: rgba(0,0,0,0.4)
+    left: $timeline-width
+    position: fixed
+    height: $timeline-height
+    cursor: ew-resize
+    z-index: 30
+    &:before
+      width: 0
+      height: 0
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      border-top: 10px solid color(primary-active)
+      display: block
+      content: ''
+      margin-left: -7px
+      margin-top: -10px
+    &:after
+      content: ''
+      display: block
+      width: 30px
+      height: 30px
+      background: transparent
+      margin-left: -15px
+      margin-top: -15px
+
+  .ruler
+    position: absolute
+    left: $timeline-width
+    z-index: 20
+    overflow: hidden
+    height: 5px
+    div
+      transition: all 50ms ease-in
+      display: inline-block
+      margin-left: 59px
+      width: 1px
+      height: 10px
+      background: color(primary-faded)
+
+  ul.scenes
+    border-top: $border-style-dark
+    font-family: $font-heading
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    overflow-x: auto
+    overflow-y: hidden
+    width: 100%
+    &::-webkit-scrollbar
+      height: 12px
+      background: #dae0ef
+    &::-webkit-scrollbar-thumb
+      border: 1px solid rgba(0,0,0,0)
+      background: color(primary)
+      border-radius: 10px
+      margin: 5px
+      background-clip: padding-box
+    li
+      transition: all 50ms ease-in
+      background: color(white)
+      flex-shrink: 0
+      width: 200px
+      height: 100%
+      box-sizing: border-box
+      border-right: $border-style-dark
+      justify-content: center
+      align-items: center
+      display: flex
+      font-size: 16px
+      font-weight: 300
+      position: relative
+      cursor: pointer
+      color: #4a4a4a
+      border-right: 1px solid color(background-vdark)
+    li:hover
+      background: color(primary-hover)
+    li:first-child
+      border-left: $border-style-dark
+    li.active
+      font-weight: bold
+      font-size: 18px
+      .clone
+        display: block
+    .clone
+      position: absolute
+      top: 5px
+      right: 5px
+      text-decoration: none
+      color: color(primary-light)
+      opacity: 0.3
+      display: none
+      &:hover
+        opacity: 1
+      &:before
+        +icon($icon-copy, color(primary-light))
+

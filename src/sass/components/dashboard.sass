@@ -1,0 +1,53 @@
+section.new-project
+  background-image: linear-gradient(99deg, color(light-royal-blue), color(purpley))
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5)
+  padding: 20px
+  h3
+    color: #fff
+    margin-bottom: 20px
+    font-size: 16px
+  ul
+    margin: 0
+    padding: 0
+    display: flex
+    li
+      cursor: pointer
+      margin: 10px
+      +img-hover-style
+    li span
+      display: block
+      color: #fff
+      text-align: center
+      font-size: 13px
+      font-weight: normal
+      margin-top: 8px
+
+section.recent-projects
+  padding: 20px
+  background-color: color(lightness-bg)
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14)
+  p
+    @extend .text-intro-style
+  h3
+    margin: 0 0 20px 0
+    font-size: 16px
+
+section.recent-exports
+  ul
+    margin: 0
+    padding: 20px
+  h3
+    margin: 20px 0 0 20px
+  h4
+    font-size: 13px
+    font-weight: 300
+    text-align: left
+    color: color(black-2)
+    margin-top: 20px
+  p
+    @extend .text-detail-style
+    margin: 0.5em 0
+  li
+    display: inline-block
+    cursor: pointer
+    +img-hover-style

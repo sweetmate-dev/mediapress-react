@@ -1,0 +1,15 @@
+=tablet
+  @media(min-width: #{$tablet-width})
+    @content
+
+=tablet-only
+  @media(min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+    @content
+
+=desktop
+  @media(min-width: #{$desktop-width})
+    @content
+
+=desktop-lg
+  @media(min-width: #{$desktop-lg-width})
+    @content

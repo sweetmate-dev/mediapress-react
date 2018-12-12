@@ -1,0 +1,62 @@
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.spinner-outer
+  width: 240px
+  height: 240px
+  padding: 10px
+  box-sizing: border-box
+  position: relative
+  margin: 0 auto
+  &:before
+    content: ''
+    display: block
+    width: 160px
+    height: 160px
+    border: 40px solid #414244
+    position: absolute
+    border-radius: 220px
+    margin: -10px
+.spinner
+  border: 20px transparent solid
+  border-top: 20px solid #52d781
+  border-radius: 100%
+  width: 180px
+  height: 180px
+  animation: spin 1s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95)
+.spinner-inner
+  position: absolute
+  color: #FFF
+  line-height: 220px
+  width: 220px
+  font-size: 46px
+  font-weight: bold
+
+// Global ajax animation
+#app-inner .spinner-outer
+  display: none
+  transition: all 2s linear
+.uploading #app-inner .spinner-outer
+  display: block
+  transition: all 0 linear
+  position: absolute
+  transform: scale(0.3)
+  position: absolute
+  top: 19px
+  right: -150px
+  transform-origin: top left
+  z-index: 999999
+
+// Mini Loader
+.spinner-outer.mini
+  transform: scale(0.16)
+  transform-origin: top left
+  position: absolute
+  margin-left: -50px
+  margin-top: 2px
+  display: none
+.active .spinner-outer.mini
+  display: block

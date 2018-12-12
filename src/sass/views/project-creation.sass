@@ -1,0 +1,28 @@
+.project-create
+    h2
+        margin: 30px
+        font-family: $font-default;
+        font-size: 26px;
+        font-weight: 300;
+        color: #4a4a4a;
+
+    .template-container
+        display: flex
+        flex-wrap: wrap
+        .project-template
+            .tmp-content
+                width: 500px
+                height: 281px
+                background-color: white
+                margin: 30px
+                cursor: pointer
+                &:hover 
+                    transform: scale(1.1)
+                &.active
+                    transform: scale(1)
+            .tmp-title
+                text-align: center
+                font-family: $font-default;
+                font-size: 13px;
+                font-weight: 300;
+                color: #393c40;

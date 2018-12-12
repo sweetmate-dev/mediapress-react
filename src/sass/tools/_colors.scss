@@ -1,0 +1,35 @@
+@mixin set_base_colors() {
+    @each $name, $color in $colors {
+        --color-#{$name}: #{$color};
+    }
+}
+
+@mixin set_day_colors() {
+    @include set_base_colors()
+    @each $name, $color in $day-colors {
+        --color-#{$name}: #{$color};
+    }
+}
+
+@mixin set_night_colors() {
+    @include set_base_colors()
+    @each $name, $color in $night-colors {
+        --color-#{$name}: #{$color};
+    }
+}
+
+@function color($color-name) {
+    @return var(--color-#{$color-name});
+}
+
+@mixin set_color($color-name, $value) {
+    --color-#{$color-name}: #{$value};
+}
+
+@mixin night-only(){
+    .night-colors { @content }
+}
+
+@mixin day-only(){
+    .day-colors { @content }
+}

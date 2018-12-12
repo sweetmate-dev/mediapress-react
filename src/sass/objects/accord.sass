@@ -1,0 +1,25 @@
+ul.accord, div.accord
+  list-style: none
+  margin: 0 20px 20px 20px
+  padding: 0
+
+  .title
+    border: solid 1px color(lightness-accord-content-border)
+    height: 38px
+    @extend .menu-text-style
+    padding-left: 15px
+    line-height: 38px
+    background: #fafbfe
+  .content
+    height: 0
+    overflow: hidden
+    border-width: 0
+    display: none
+    background: color(lightness-accord-content-bg)
+  .active > .content, &.active .content
+    display: block
+    padding: 15px
+    height: auto
+    border-left: solid 1px color(lightness-accord-content-border)
+    border-right: solid 1px color(lightness-accord-content-border)
+    border-bottom: solid 1px color(lightness-accord-content-border)

@@ -1,0 +1,22 @@
+ul.element-list
+  padding: 0
+  margin: 0 0 20px 0
+  li
+    cursor: pointer
+    border: 1px solid color(border)
+    margin-bottom: 5px
+    position: relative
+    display: flex
+    justify-content: space-between
+    &:hover
+      background: color(background-dark)
+    a
+      display: block
+      padding: 5px
+      text-decoration: none
+  li.active
+    background: color(secondary)
+    a span
+      color: white
+    a.hamburger:before
+      background: white

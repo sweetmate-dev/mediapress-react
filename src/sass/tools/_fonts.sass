@@ -1,0 +1,29 @@
+=icon($icon, $color:color(color-menu-icon), $width:20px, $height:20px)
+
+  display: inline-block
+  width: $width
+  height: $height
+  background: $color
+
+  -webkit-mask-image: url('/static/icons/' + $icon)
+  mask-image: url('/static/icons/' + $icon)
+  -webkit-mask-size: $width $height
+  mask-size: $width $height
+  -webkit-mask-repeat: no-repeat
+  mask-repeat: no-repeat
+
+  speak: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale;
+  content: ''
+
+=icon-before($icon)
+  &:before
+    +icon($icon)
+    @content
+
+=icon-after($icon)
+  &:after
+    +icon($icon)
+    @content

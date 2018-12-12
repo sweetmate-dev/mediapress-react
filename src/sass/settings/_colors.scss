@@ -1,0 +1,114 @@
+/*
+ * _colors.scss
+ *
+ * Defines all colors to be used mainly with the color() function which
+ * can handle the switching of colors between the dark/light themes
+ *
+ * Examples:
+ * ```scss
+ * .element{ background: color(primary-dark); color: color(grey); }
+ * ```
+ */
+
+$colors: (
+	// Base Colors
+	primary-dark: #151E69,
+	primary-active: #4246FF,
+
+	background: #F5F6FB,
+	background-dark: darken(#F5F6FB, 5),
+	background-vdark: darken(#F5F6FB, 15),
+	background-login: linear-gradient(to bottom right, #F5F6FB, #FFF),
+  input-label: grey,
+	primary-hover: lighten(#4353ff, 30),
+
+	// Zeplin,
+	light-royal-blue: #4546ff,
+	purpley: #6f53e7,
+	black: #212224,
+	black-2: #393c40,
+	black-3: #474b4f,
+	black-4: #6f737a,
+	grey: #aaaeb3,
+	white-4: #c6c9cf,
+	white-3: #eaeaea,
+	white-2: #ecedef,
+	white: #ffffff,
+	primary-faded: #7b95ce,
+	primary-shade: #5b75bc,
+	tertiary: #fc3d71,
+	primary-light: #d4dbed,
+	primary-gradient: #6e43ff,
+	red-gradient-from: #e55a90,
+	red-gradient-to: #e5a46f,
+	menu-edit: #ffb300,
+	menu-edit-2: #ffa000,
+
+	error-color: darken(#D94A3A, 40),
+	error-bg: #D94A3A,
+	// End Zeplin
+
+	// Gradients
+	red-gradient: linear-gradient(to bottom right, #ff324f, #ff5c5c) ,
+	blue-gradient: linear-gradient(77deg, #4353ff, #5843ff),
+
+	// Applied Colors
+	link-color: #4353ff,
+	border: #dcdcdc,
+	border-dark: darken(#dcdcdc,10),
+
+	// Sidebar
+	sidebar-color: #4353ff,
+	sidebar-color-1: #151e6b,
+	sidebar-color-2: #ffb10c,
+	sidebar-color-3: #4353ff,
+	sidebar-color-4: #00c2b6,
+	sidebar-color-5: #ff3165,
+	sidebar-color-6: #6f53e7,
+	sidebar-color-7: #ffab00,
+	sidebar-color-8: #008c7d,
+	sidebar-color-9: #4a90e2,
+	sidebar-color-10: #7c4dff,
+	sidebar-color-11: #00b89b,
+	sidebar-color-12: #546e7a,
+
+	button: #4353ff,
+  ribbon-start: #4353ff,
+  ribbon-end: #5843ff,
+  bg:#ffffff,
+  bgalt:#fafbf3,
+  accent:#151e6b,
+  field:#ffffff,
+  fieldborder:#d0d6e7,
+	secondary: #151e6b,
+	primary: #4353ff,
+  color-menu-icon: #151E69,
+  btn-text: #ffffff,
+  text: #151e6b,
+);
+
+$day-colors: (
+  lightness-ribbon-start: #4353ff,
+  lightness-ribbon-end: #5843ff,
+  lightness-bg: #ffffff,
+  lightness-text: #151e6b,
+  lightness-text-hover: #ffffff,
+  lightness-setting: #9b9b9b,
+  lightness-accord-content-bg:#ffffff,
+  lightness-accord-content-border:#d4dbed,
+  lightness-accord-title-bg:#fafbfe,
+  lightness-switch-track: #ecedef,
+  lightness-switch-knob: #c6c9cf,
+);
+$night-colors: (
+  lightness-ribbon-start: #393939,
+  lightness-ribbon-end: #393939,
+  lightness-bg: #282828,
+  lightness-text: #ffffff,
+  lightness-text-hover: #ffffff,
+  lightness-setting: #ffffff,
+  lightness-accord-content-bg:#393939,
+  lightness-accord-content-border:#282828,
+  lightness-switch-track: #ecedef,
+  lightness-switch-knob: #4353ff,
+);

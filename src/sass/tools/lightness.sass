@@ -1,0 +1,11 @@
+@mixin day-only
+  $c: &
+  @at-root
+    .day-colors #{$c}
+      @content
+@mixin night-only
+  $c: &
+  @at-root
+    .night-colors #{$c}
+      @content
+

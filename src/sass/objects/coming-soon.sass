@@ -1,0 +1,39 @@
+.soonClock
+  display: block
+  background-size: 100% 100%
+  text-indent: -99999px
+  margin-bottom: 23px
+  &:before
+    content: ''
+    display: block
+    background: url('../img/clock.svg')
+    background-size: 100% 100%
+    width: 71px
+    height: 71px
+    margin: 0 auto
+
+
+.comming-soon
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    height: calc(100% - 40px)
+    color: #ffffff
+    background-image: linear-gradient(61deg, #4353ff, #5843ff);
+    font-weight: 300;
+    animation: fadein 2s;
+
+    div:nth-child(2)
+        font-size: 26px;
+        margin-bottom: 17px;
+    div:nth-child(3)
+        font-size: 18px;
+
+@keyframes fadein 
+  from
+    opacity: 0;
+  to
+    opacity: 1;
+
+    

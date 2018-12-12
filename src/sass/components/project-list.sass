@@ -1,0 +1,32 @@
+ul.project-list
+  margin: 0
+  padding: 0
+  li
+    // Responsive List Sizing
+    display: inline-block
+    width: 100%
+    +tablet
+      width: 31%
+      margin-right: 3%
+      &:nth-child(3n)
+        margin-right: 0
+    +desktop-lg
+      width: 18%
+      margin-right: 2%
+      &:nth-child(3n)
+        margin-right: 2%
+
+    // Interaction
+    cursor: pointer
+    +img-hover-style
+
+  img
+    width: 100%
+    height: auto
+  span
+    margin-top: 4px
+    display: block
+    width: 100%
+    text-align: center
+    +night-only
+      color: white

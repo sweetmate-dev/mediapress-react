@@ -1,0 +1,67 @@
+body
+  margin: 0
+  #app
+    overflow: hidden
+
+a
+  color: color(primary-dark)
+
+h1,h2,h3,h4,h5,h6
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+#app-inner
+  width: 100%
+  height: 100%
+  display: flex
+  flex-shrink: 0
+
+.day-colors
+  +set_day_colors()
+  .accord .title
+    background: color(lightness-accord-title-bg)
+
+.night-colors
+  +set_night_colors()
+  .accord .title
+    background: color(sidebar-color)
+
+.center
+  text-align: center
+
+.hidden
+  opacity: 0
+  transition: opacity 1s ease
+
+.clear, .clearfix
+  clear: both
+
+h1
+  @extend .h1-style
+h2
+  @extend .h2-style
+h3
+  @extend .h3-style
+
+#app > .filedrag:before
+  display: block
+  content: ''
+  position: absolute
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  z-index: 999999
+  background: rgba(0,0,0,0.5)
+  select: none
+#app > .filedrag:after
+  display: block
+  content: 'Drop to upload Image'
+  position: absolute
+  top: 40%
+  color: #FFF
+  z-index: 9999999
+  left: 40%

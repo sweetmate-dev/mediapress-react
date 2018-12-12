@@ -1,0 +1,88 @@
+$slide-in-duration: 1s
+$slide-in-delay: 1s
+
+.login-outer
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  background: color(background-login)
+  flex-direction: column
+  overflow: hidden
+  transition: all 1s ease
+  .boundInDown
+  position: absolute
+  z-index: 1000
+  &.logged-in
+    display: none
+    +desktop
+      display: block
+      position: absolute
+      margin-top: -100%
+
+h1.logo
+  background: url('../img/logo.png')
+  display: block
+  width: 250px
+  height: 58px
+  text-indent: -99999px
+
+.error.active
+  background: color(error-bg)
+  font-size: 15px
+  color: color(error-color)
+  width: 480px;
+  margin-bottom: -7px;
+  margin-top: 1.5%;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  padding: 5px 0;
+
+#login
+  width: 440px
+  margin: 1.5% auto
+  padding: 20px
+  background-color: #fff
+  border-radius: 2px
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33)
+  transition: all .3s ease
+  font-family: Helvetica, Arial, sans-serif
+
+.login-outer form
+  margin: 0
+  input[type="text"],input[type="password"]
+    +input-style
+    width: 100%
+.inputs
+  flex-grow: 1
+
+#login-footer .sub-inputs
+  display: flex
+  font-size: 12px
+  position: relative
+  width: 460px
+  animation-duration: $slide-in-duration
+  animation-delay: $slide-in-delay
+  .left
+    width: 50%
+    display: flex
+    a
+      text-decoration: none
+      margin-top: 10px
+      &:hover
+        text-decoration: underline
+  .right
+    position: absolute
+    right: 0
+    button:first-child
+      margin-right: 10px
+
+#login-version
+  width: 100%
+  position: absolute
+  text-align: center
+  bottom: 15px
+  left: 0
+  color: #AAA
+  font-size: 11px

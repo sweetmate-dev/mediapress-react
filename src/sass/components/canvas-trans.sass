@@ -1,0 +1,53 @@
+section.menu
+
+  .trans-inner
+    position: absolute
+    width: 44px
+    top: 0
+    left: 0
+    z-index: 99
+
+  .trans
+    height: 89%
+    top: 0
+    left: 0
+    position: relative
+    background: #E9E9E9
+    width: 0
+    display: none
+    ul
+
+      margin-right: -44px
+      padding: 0
+      margin: 0
+      li
+        margin-top: 3px
+        margin-left: 3px
+      a
+        cursor: pointer
+        width: 34px
+        height: 34px
+        background: white
+        border: 2px solid #151E69
+        display: block
+        border-radius: 3px
+        text-align: center
+        line-height: 34px
+      a:hover, li.active a
+        background: $primary
+        color: white
+    a.addElement
+      display: block
+      text-decoration: none
+      color: green
+      margin: 10px auto 0 auto
+      border: 2px solid green
+      border-radius: 40px
+      width: 20px
+      height: 20px
+      font-size: 20px
+      line-height: 20px
+      font-weight: bold
+      text-align: center
+  .trans.active
+    display: block

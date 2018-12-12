@@ -1,0 +1,186 @@
+section.menu
+  display: flex
+  &>div
+    width: 0
+
+  .btn
+    margin-left: 20px
+    width: 180px
+    &.bottom
+      position: absolute
+      bottom: 20px
+      
+  // Headings
+  .preview
+    +set_color(sidebar-color, color(sidebar-color-1))
+    h3
+      +sidebar-heading(color(sidebar-color))
+  .edit
+    +set_color(sidebar-color, color(sidebar-color-2))
+    h3
+      +sidebar-heading(color(sidebar-color))
+    h4
+      font-size: 12px;
+      font-weight: 300;
+      color: #9b9b9b;
+  .add-scene
+    +set_color(sidebar-color, color(sidebar-color-3))
+    h3
+      +sidebar-heading(color(sidebar-color))
+  .audio 
+    +set_color(sidebar-color, color(sidebar-color-4))
+    h3
+      +sidebar-heading(color(sidebar-color))
+  .settings
+    +set_color(sidebar-color, color(sidebar-color-5))
+    h3
+      +sidebar-heading(color(sidebar-color))
+  .export
+    +set_color(sidebar-color, color(sidebar-color-6))
+    h3
+      +sidebar-heading(color(sidebar-color))
+
+  h3 a.close
+    color: transparent
+    cursor: pointer
+    +icon-before($icon-x)
+    width: 20px
+    height: 20px
+    overflow: hidden
+    position: absolute
+    top: 6px
+    right: 6px
+    &:before
+      background: white
+
+  h3 a.close.white
+    &:before
+      background: white
+
+  // Panels
+  .panel-group
+    display: flex
+    width: auto
+    flex-basis: auto
+  >.simple, .panel-group > .simple
+    //transition: width 100ms linear
+    width: 0
+    height: 0
+    position: relative
+  .simple.active
+    z-index: 10
+    height: calc(100% - #{$timeline-height})
+    background-color: color(lightness-bg)
+    width: $menu-width
+    flex-basis: $menu-width
+    +shadow-style
+    overflow-y: auto
+    &.double
+      width: $menu-width * 2
+      flex-basis: $menu-width * 2
+    &.plus-half
+      width: $menu-width * 1.5
+      flex-basis: $menu-width * 1.5
+    &.edit
+      width: 420px
+      flex-basis: 420px;
+    .container.template.text
+      position: fixed;
+      top: 300px;
+      left: 221px;
+      width: 370px;
+      a
+        text-decoration: none
+
+  // Custom
+  >.add-scene
+    .slides
+      padding: 0 10px
+      margin: 0
+  >.full
+    animation: fadeout 1s
+    opacity: 0
+    height: 100%
+    width: 100%
+    position: absolute
+    box-sizing: border-box
+    background: rgba(0,0,0,0.4)
+    top: 0
+    z-index: 15
+    left: 0
+    display: none
+    >.full.active
+      opacity: 1
+      padding-left: $sidebar-width + 2px
+      animation: fadein 500ms
+      display: block
+
+  >&.mini .full.active
+    padding-left: $sidebar-collapsed-width + 2px
+
+  // Panel for padding
+  .panel-content
+    padding: 0 20px
+    .btn
+      margin-left: 0
+      width: 100%
+  .elements-btn-container
+    display: flex
+    flex-wrap: wrap
+    .btn.txt
+      &:before
+        +icon($icon-type, white)
+    .btn.img
+      &:before
+        +icon($icon-image, white)
+    .btn.chart
+      &:before
+        +icon($icon-bar-chart, white)
+    .btn.line
+      &:before
+        +icon($icon-minus, white)
+    .btn.shape
+      &:before
+        +icon($icon-package, white)
+    .btn.icon
+      &:before
+        +icon($icon-image, white)
+    .btn.device
+      &:before
+        +icon($icon-monitor, white)
+    .btn.video
+      &:before
+        +icon($icon-video, white)
+    div
+      div
+        font-size: 12px;
+        color: #3950a2;
+        width: 47px;
+        text-align: center;
+
+        
+
+
+  // Export overlay
+  .exporting, .previewing
+    display: none
+    background: rgba(74, 74, 74, 0.98)
+    width: calc(100% - 200px)
+    height: 100%
+    position: absolute
+    z-index: 50
+    text-align: center
+    p
+      @extend .Message-text
+    p:first-child
+      margin-top: 180px
+  .exporting.active
+    display: block
+  .previewing.active
+    display: flex
+    align-items: center
+    justify-content: center
+    video
+      width: auto
+      min-height: 400px
+      margin-bottom: 120px
